@@ -3,6 +3,8 @@ package com.demo.jerry.Jedis_demo;
 import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 public class RedisTest {
 	
@@ -30,6 +32,26 @@ public class RedisTest {
 	 */
 	@Test
 	public void testJedisDemo2() {
+		JedisPoolConfig config = new JedisPoolConfig();
+		config.setMaxTotal(50);
+		config.setMaxIdle(50);
+		JedisPool pool = new JedisPool(config,"192.168.32.128",6379);
+		Jedis jedis = null;
 		
+		try {
+			jedis = pool.getResource();
+			jedis.set("sex", "男");
+			String value = jedis.get("sex");
+			System.out.println(value);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if (jedis!=null) {
+				jedis.close();
+			}
+			if(pool!=null) {
+				pool.close();
+			}
+		}
 	}
 }
