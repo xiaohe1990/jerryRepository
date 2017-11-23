@@ -1,0 +1,57 @@
+2017-11-23 15:32:33,573 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-11-23 15:47:04,680 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: spring-security:spring-security:0.0.1-SNAPSHOT @ E:\WORKSPACE\spring-security\spring-security\pom.xml.
+2017-11-23 15:47:09,195 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-23 15:47:09,198 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\WORKSPACE\spring-security\spring-security\src\main\resources
+2017-11-23 15:47:09,203 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-23 15:47:09,204 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\WORKSPACE\spring-security\spring-security\src\test\resources
+2017-11-23 15:47:11,774 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-23 15:47:11,775 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\WORKSPACE\spring-security\spring-security\src\main\resources
+2017-11-23 15:47:11,778 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-23 15:47:11,779 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\WORKSPACE\spring-security\spring-security\src\test\resources
+2017-11-23 15:47:13,888 [Worker-25] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: superSystem:superSystem:0.0.1-SNAPSHOT @ E:\WORKSPACE\superSystem\pom.xml.
+2017-11-23 15:47:15,569 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 15:47:15,571 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-23 15:47:15,580 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2017-11-23 15:47:15,656 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 15:47:15,656 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-23 15:47:15,788 [Worker-25] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: com.hjc.superSystem:superSystem-parent:0.0.1-SNAPSHOT @ E:\WORKSPACE\superSystem-parent\pom.xml.
+2017-11-23 15:47:18,940 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 15:47:18,949 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-23 15:47:18,951 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2017-11-23 15:47:18,965 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 15:47:18,967 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-23 15:59:22,706 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-11-23 15:59:32,432 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-23 15:59:32,436 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\WORKSPACE\spring-security\spring-security\src\main\resources
+2017-11-23 15:59:32,557 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-23 15:59:32,559 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\WORKSPACE\spring-security\spring-security\src\test\resources
+2017-11-23 15:59:37,298 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 15:59:37,299 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-23 15:59:37,312 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2017-11-23 15:59:37,332 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 15:59:37,333 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-23 16:02:51,311 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: redis.clients:jedis:3.0.0-SNAPSHOT @ E:\github\jedis\pom.xml.
+2017-11-23 16:02:53,290 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:02:53,291 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\github\jedis\src\main\resources
+2017-11-23 16:02:57,665 [Worker-0] ERROR o.e.m.c.i.embedder.EclipseLogger - Manifest redis.clients:jedis:jar:3.0.0-SNAPSHOT : The default package '.' is not permitted by the Import-Package syntax. 
+ This can be caused by compile errors in Eclipse because Eclipse creates 
+valid class files regardless of compile errors.
+The following package(s) import from the default package [redis.clients.jedis, redis.clients.util]
+2017-11-23 16:02:57,698 [Worker-0] ERROR o.e.m.c.i.embedder.EclipseLogger - Error(s) found in manifest configuration
+2017-11-23 16:02:57,703 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:02:57,704 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2017-11-23 16:03:01,842 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:03:01,843 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\github\jedis\src\main\resources
+2017-11-23 16:03:01,846 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:03:01,853 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2017-11-23 16:03:03,739 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: shiro.demo:shiro.demo:0.0.2-SNAPSHOT @ E:\github\SpringMVC-Mybatis-Shiro-redis-0.2\pom.xml.
+2017-11-23 16:03:06,336 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:03:06,338 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2017-11-23 16:03:06,391 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2017-11-23 16:03:06,420 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:03:06,421 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\github\SpringMVC-Mybatis-Shiro-redis-0.2\src\test\resources
+2017-11-23 16:03:08,627 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:03:08,629 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2017-11-23 16:03:08,665 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2017-11-23 16:03:08,681 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-23 16:03:08,681 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\github\SpringMVC-Mybatis-Shiro-redis-0.2\src\test\resources
