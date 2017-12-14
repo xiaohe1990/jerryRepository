@@ -42,10 +42,10 @@
   
   
   <build>
-    <finalName>superSystem</finalName>
+    <finalName>jedis_demo</finalName>
     <plugins>
     	<!-- jetty插件, 设定context path与spring profile -->
-			<plugin>
+			<!--<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
@@ -63,7 +63,7 @@
 					</webAppConfig>
 				</configuration>
 			</plugin>
-			
+			-->
 			<!-- compiler插件, 设定JDK版本 -->
 			<plugin>  
 	            <groupId>org.apache.maven.plugins</groupId>  
@@ -75,32 +75,102 @@
 	            </configuration>  
 	        </plugin>
 
-			<!-- war打包插件, 设定war包名称不带版本号 -->
+			 <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-jar-plugin</artifactId>  
+                <version>2.4</version>  
+                <configuration>  
+                    <archive>  
+  
+                        <!-- 
+                            生成的jar中，不要包含pom.xml和pom.properties这两个文件 
+                        -->  
+                        <addMavenDescriptor>false</addMavenDescriptor>  
+                        <!-- Manifest specific configuration -->  
+                        <manifest>  
+                            <!-- 
+                                是否要把第三方jar放到manifest的classpath中 
+                            -->  
+                            <addClasspath>true</addClasspath>  
+                            <!-- 
+                               生成的manifest中classpath的前缀，因为要把第三方jar放到lib目录下，所以classpath的前缀是lib/ 
+                           -->  
+                            <classpathPrefix>lib/</classpathPrefix>  
+                            <!-- 
+                                应用的main class 
+                            -->  
+                            <mainClass>com.demo.jerry.main.App</mainClass>  
+                        </manifest>  
+                    </archive>  
+                    <!-- 
+                        过滤掉不希望包含在jar中的文件 
+                    -->  
+                    <!--<excludes>-->  
+                        <!--<exclude>${project.basedir}/xml/*</exclude>-->  
+                    <!--</excludes>-->  
+                </configuration>  
+            </plugin>  
+  
+  			<!--  
+            <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-assembly-plugin</artifactId>  
+                <version>2.4</version>  
+                <configuration>  
+                    <descriptors>  
+                        <descriptor>src/main/assembly.xml</descriptor>  
+                    </descriptors>  
+                </configuration>  
+                <executions>  
+                    <execution>  
+                        <id>make-assembly</id>  
+                        <phase>package</phase>  
+                        <goals>  
+                            <goal>single</goal>  
+                        </goals>  
+                    </execution>  
+                </executions>  
+            </plugin> 			
+			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<warName>${project.artifactId}</warName>
-				</configuration>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			
     </plugins>
          
-     <resources>
-        <resource>
-            <directory>src/main/Java</directory>
-            <excludes>
-                <exclude>**/*.java</exclude>
-            </excludes>
-        </resource>
-        <resource>
-            <directory>src/main/resources</directory>
-            <includes>
-                <include>**/*.* </include>
-            </includes>
-        </resource>
-    </resources>
+    <resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*.properties</include>
+				<include>**/*.xml</include>
+				<include>**/*.ini</include>
+			</includes>
+			<filtering>false</filtering>
+		</resource>
+		<resource>
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.properties</include>
+				<include>**/*.xml</include>
+			</includes>
+			<filtering>false</filtering>
+		</resource>
+	</resources>
   </build>
   
 </project>
