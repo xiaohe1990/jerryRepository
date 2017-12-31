@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+outputCodeset=UTF-8
 validateFragments=false
 validation.actions-missing-required-attribute=1
 validation.actions-non-empty-inline-tag=2

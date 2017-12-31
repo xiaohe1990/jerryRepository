@@ -17,10 +17,10 @@ public class RedisTest {
 	/**
 	 * 测试连接
 	 */
-	//@Test
+	@Test
 	public void testJedisDemo1() {
 		try {
-			Jedis jedis  = new Jedis("192.168.32.128",6379);
+			Jedis jedis  = new Jedis("119.23.109.181",6379);
 			jedis.set("name","何锦程");
 			String name = jedis.get("name");
 			System.out.println(name);
@@ -62,7 +62,7 @@ public class RedisTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void jedisClusterTest() {
 		try {
 			// 数据库链接池配置

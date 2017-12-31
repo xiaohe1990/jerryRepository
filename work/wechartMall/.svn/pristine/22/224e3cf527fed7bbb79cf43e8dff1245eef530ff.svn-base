@@ -1,0 +1,6 @@
+com\web\util\MappingFastJsonHttpMessageConverter.class
+com\web\service\system\impl\UUserServiceImpl.class
+com\web\pojo\system\UUser.class
+com\web\dao\system\UUserMapper.class
+com\web\service\system\UUserService.class
+com\web\controller\system\UserInfoController.class

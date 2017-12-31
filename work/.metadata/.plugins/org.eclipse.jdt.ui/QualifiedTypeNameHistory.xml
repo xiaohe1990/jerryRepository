@@ -1,2 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="redis.clients.jedis.JedisPoolConfig"/>
+<fullyQualifiedTypeName name="redis.clients.jedis.JedisPool"/>
+<fullyQualifiedTypeName name="redis.clients.jedis.Jedis"/>
+<fullyQualifiedTypeName name="redis.clients.jedis.JedisCluster"/>
+<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+<fullyQualifiedTypeName name="com.web.service.system.UUserService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="javax.annotation.Resource"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.apache.shiro.util.Factory"/>
+<fullyQualifiedTypeName name="org.apache.shiro.config.IniSecurityManagerFactory"/>
+<fullyQualifiedTypeName name="org.apache.shiro.mgt.SecurityManager"/>
+<fullyQualifiedTypeName name="org.apache.shiro.subject.Subject"/>
+<fullyQualifiedTypeName name="org.apache.shiro.SecurityUtils"/>
+<fullyQualifiedTypeName name="org.apache.shiro.authc.UsernamePasswordToken"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="org.springframework.util.Assert"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="com.web.core.shiro.session.SessionStatus"/>
+<fullyQualifiedTypeName name="com.web.common.utils.VerifyCodeUtils"/>
+<fullyQualifiedTypeName name="com.web.common.utils.vcode.Captcha"/>
+<fullyQualifiedTypeName name="com.web.common.utils.vcode.GifCaptcha"/>
+<fullyQualifiedTypeName name="com.web.common.utils.vcode.SpecCaptcha"/>
+<fullyQualifiedTypeName name="com.web.pojo.system.UUser"/>
+<fullyQualifiedTypeName name="com.web.dao.system.UUserMapper"/>
+<fullyQualifiedTypeName name="com.web.util.StringUtils"/>
+<fullyQualifiedTypeName name="com.web.common.utils.LoggerUtils"/>
+<fullyQualifiedTypeName name="com.mall.common.model.UUser"/>
+<fullyQualifiedTypeName name="com.mall.core.statics.Constant"/>
+</qualifiedTypeNameHistroy>

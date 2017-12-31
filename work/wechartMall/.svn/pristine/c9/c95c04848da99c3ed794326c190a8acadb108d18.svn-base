@@ -1,0 +1,33 @@
+package com.web.controller.system;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.web.pojo.system.UUser;
+import com.web.service.system.UUserService;
+
+@Controller
+@RequestMapping("/user")
+public class UserInfoController {
+	@Autowired
+	private UUserService uUserService;
+	
+	@RequestMapping("/userInfoIndex")
+	public String userInfoIndex(HttpServletRequest request,Model model) {
+		UUser uUser = uUserService.findUserByEmail("8446666@qq.com");
+		model.addAttribute("user", uUser);
+		return "userInfo";
+	}
+	
+	@RequestMapping("/toUserJson")
+	@ResponseBody
+	public UUser toUserJson(HttpServletRequest request,Model model) {
+		UUser uUser = uUserService.findUserByEmail("8446666@qq.com");
+		return uUser;
+	}
+}

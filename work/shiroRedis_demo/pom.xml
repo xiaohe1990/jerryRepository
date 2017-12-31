@@ -110,6 +110,13 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.18</version>
 		</dependency> 
+		
+		<!-- shiro 核心jar包 -->
+		<dependency>
+	        <groupId>org.apache.shiro</groupId>
+	        <artifactId>shiro-core</artifactId>
+	        <version>1.2.5</version>
+	    </dependency>
         <!-- 导入java ee jar 包 -->  
         <dependency>  
             <groupId>javax</groupId>  
