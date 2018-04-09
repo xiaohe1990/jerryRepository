@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.layui-tab ul.layui-tab-title li:nth-child(1) i:nth-child(2) {
+    display: none;
+}
+.layui-layout-admin .layui-footer {
+    position: fixed;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    background-color: #4E5465;
+	color:rgba(255,255,255,.7);
+}
+
+
+

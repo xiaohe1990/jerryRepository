@@ -1,0 +1,5 @@
+package zb.com.services;
+
+public interface UserBasicServices {
+
+}

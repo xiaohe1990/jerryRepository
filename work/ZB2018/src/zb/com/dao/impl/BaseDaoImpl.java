@@ -1,0 +1,253 @@
+package zb.com.dao.impl;
+
+import java.lang.reflect.ParameterizedType;
+import java.util.List;
+
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import org.springframework.stereotype.Repository;
+
+import zb.com.dao.BaseDao;
+
+
+
+@Repository(value="baseDao")
+public  class BaseDaoImpl<T> implements BaseDao<T> {
+	@Autowired
+	@Qualifier("sessionFactory")
+	private SessionFactory sessionFactory;
+
+	/*
+	 * private Class<T> clazz;
+	 * 
+	 * 
+	 * public BaseDaoImpl() { //用于获取当前类的真实类型(虽然Dao层为单实例,但clazz不存大安全问题)
+	 * ParameterizedType pt = (ParameterizedType)
+	 * this.getClass().getGenericSuperclass(); // 获取当前new的对象的 泛型的父类 类型
+	 * this.clazz = (Class<T>) pt.getActualTypeArguments()[0]; // 获取第一个类型参数的真实类型
+	 * 
+	 * }
+	 */
+
+	/**
+	 * 
+	 * @Title: getCurrSession
+	 * @Description: TODO(获得当前Session)
+	 * @param @return
+	 * @return Session
+	 * @throws
+	 */
+	protected Session getCurrSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	/*
+	 * (非 Javadoc) <p>Title: findById</p> <p>Description: 根据ID获取实体</p>
+	 * 
+	 * @param id
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#findById(int)
+	 */
+	@SuppressWarnings("unchecked")
+	public T findById(Class calss, int id) {
+		return (T) getCurrSession().get(calss.getClass(), id);
+
+	}
+
+	/*
+	 * (非 Javadoc) <p>Title: findByPageHql</p> <p>Description:hql分页查询集合 </p>
+	 * 
+	 * @param hql
+	 * 
+	 * @param objArray 参数
+	 * 
+	 * @param nowPage
+	 * 
+	 * @param size
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#findByPageHql(java.lang.String,
+	 * java.lang.Object[], int, int)
+	 */
+	public List<?> findByPageHql( final String hql, final List<Object> objArray,
+			final int nowPage,  final int size) {
+		Query query = getCurrSession().createQuery(hql);
+		for (int i = 0; i < objArray.size(); ++i) {
+			query.setParameter(i, objArray.get(i));
+		}
+		query.setFirstResult((nowPage-1)*size);
+		query.setMaxResults(size);
+	
+		return query.list();
+
+	}
+
+	/*
+	 * (非 Javadoc) <p>Title: queryListByHql</p> <p>Description: HQL带参数查询集合</p>
+	 * 
+	 * @param hql
+	 * 
+	 * @param objArray
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#queryListByHql(java.lang.String,
+	 * java.lang.Object[])
+	 */
+	public List<?> queryListByHql(String hql, List<Object> objArray) {
+		Query query = getCurrSession().createQuery(hql);
+		for (int i = 0; i < objArray.size(); ++i) {
+			query.setParameter(i, objArray.get(i));
+		}
+		return query.list();
+
+	}
+
+	/*
+	 * 
+	 * <p>Title: executeHql</p> <p>Description: HQL带参数增删改</p>
+	 * 
+	 * @param hql
+	 * 
+	 * @param params
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#executeHql(java.lang.String,
+	 * java.lang.Object[])
+	 */
+	public int executeHql(String hql, List<Object> params) {
+		Query query = getCurrSession().createQuery(hql);
+		if (null != params) {
+			for (int i = 0; i < params.size(); i++) {
+				query.setParameter(i, params.get(i));
+			}
+		}
+
+		return query.executeUpdate();
+
+	}
+
+	/*
+	 * HQL查询一个对象 <p>Title: getObjectHql</p> <p>Description: </p>
+	 * 
+	 * @param hql
+	 * 
+	 * @param objArray
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#getObjectHql(java.lang.String,
+	 * java.lang.Object[])
+	 */
+	public Object getObjectHql(String hql, List<Object> objArray) {
+		Query query = getCurrSession().createQuery(hql);
+		if (null != objArray) {
+			for (int i = 0; i < objArray.size(); ++i) {
+				query.setParameter(i, objArray.get(i));
+			}
+		}
+		return query.uniqueResult();
+
+	}
+
+	/*
+	 * (非 Javadoc) <p>Title: getCountHql</p> <p>Description:查询总记录数 </p>
+	 * 
+	 * @param hql
+	 * 
+	 * @param objArray
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#getCountHql(java.lang.String,
+	 * java.lang.Object[])
+	 */
+	public Long getCountHql(String hql, List<Object> objArray) {
+		Query query = getCurrSession().createQuery(hql);
+		for (int i = 0; i < objArray.size(); ++i) {
+			query.setParameter(i, objArray.get(i));
+		}
+		return (Long) query.uniqueResult();
+
+	}
+
+	/*
+	 * 增删改，执行原生态的SQL语句 <p>Title: executeSql</p> <p>Description:增删改，执行原生态的SQL语句
+	 * </p>
+	 * 
+	 * @param sql
+	 * 
+	 * @param params
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#executeSql(java.lang.String,
+	 * java.lang.Object[])
+	 */
+	public int executeSql(String sql, List<Object> params) {
+		Query query = getCurrSession().createSQLQuery(sql);
+		if (null != params) {
+			for (int i = 0; i < params.size(); i++) {
+				query.setParameter(i, params.get(i));
+			}
+		}
+		return query.executeUpdate();
+	}
+
+	/*
+	 * 原生态根据SQL查询集合 <p>Title: queryListBySql</p> <p>Description: 原生态根据SQL查询集合
+	 * </p>
+	 * 
+	 * @param sql
+	 * 
+	 * @param params
+	 * 
+	 * @return
+	 * 
+	 * @see qczc.com.dao.BaseDao#queryListBySql(java.lang.String,
+	 * java.lang.Object[])
+	 */
+	public List<?> queryListBySql(String sql, List<Object> params) {
+
+		Query query = getCurrSession().createSQLQuery(sql);
+		if (params != null) {
+			for (int i = 0; i < params.size(); i++) {
+				query.setParameter(i, params.get(i));
+			}
+		}
+		return query.list();
+
+	}
+
+	/**
+	 * 
+	 * @Title: saveEntity
+	 * @Description: TODO(保存实体)
+	 * @param @param entity
+	 * @param @return 设定文件
+	 * @return int 返回类型ID
+	 * @throws
+	 */
+	public int saveEntity(T entity) {
+		Session session = getCurrSession();
+		int id = (Integer) session.save(entity);
+		session.flush();
+		return id;
+	}
+
+	public void updateEntity(T entity) {
+		Session session = getCurrSession();
+		session.update(entity);
+		//session.flush();
+		
+	}
+}

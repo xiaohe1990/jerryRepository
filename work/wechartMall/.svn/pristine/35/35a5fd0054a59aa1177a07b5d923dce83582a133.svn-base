@@ -1,0 +1,184 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>${token.nickname?default('未设置')} —个人中心</title>
+<link rel="stylesheet" href="${basePath}/common/layui/css/layui.css">
+<link rel="stylesheet" href="${basePath}/sys/css/sys.index.css">
+
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">创想商城后台管理</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <!-- <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">是</a></li>
+      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="">用户</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">其它系统</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">邮件管理</a></dd>
+          <dd><a href="">消息管理</a></dd>
+          <dd><a href="">授权管理</a></dd>
+        </dl>
+      </li>
+    </ul>-->
+    <ul class="layui-nav layui-layout-right">
+    <li class="layui-nav-item">
+<a href="">控制台<span class="layui-badge">9</span></a>
+</li>
+<li class="layui-nav-item">
+<a href="">个人中心<span class="layui-badge-dot"></span></a>
+</li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="${basePath}/sys/img/04.jpg" class="layui-nav-img">
+         ${token.nickname?default('未设置')}
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a  href="javascript:void(0);" onclick="logout();">退出</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">用户中心</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:tabAdd('屏幕上墙','${basePath}/user/user_list.shtml',3);">屏幕上墙</a></dd>
+            <dd><a href="javascript:;">转盘大抽奖</a></dd>
+            <dd><a href="javascript:;">赛马小游戏</a></dd>
+            <dd><a href="javascript:;">助力小游戏</a></dd>
+          </dl>
+        </li>
+         <li class="layui-nav-item">
+          <a href="javascript:;">网站管理</a>
+            <dl class="layui-nav-child">
+             <dd><a href="javascript:;">网站模板管理</a></dd>
+             <dd><a href="javascript:;">网站栏目管理</a></dd>
+             <dd><a href="javascript:;">信息发布管理</a></dd>
+            </dl>
+         </li>
+          <li class="layui-nav-item">
+          <a href="javascript:;">门店管理</a>
+            <dl class="layui-nav-child">
+             <dd><a href="javascript:;">门店列表管理</a></dd>
+             <dd><a href="javascript:;">门店游戏管理</a></dd>
+             <dd><a href="javascript:;">门店会员管理</a></dd>
+             <dd><a href="javascript:;">门店资金管理</a></dd>
+            </dl>
+         </li>
+          <li class="layui-nav-item">
+          <a href="javascript:;">商城管理</a>
+            <dl class="layui-nav-child">
+             <dd><a href="javascript:;">商品栏目管理</a></dd>
+             <dd><a href="javascript:;">商品入库管理</a></dd>
+             <dd><a href="javascript:;">商品订单管理</a></dd>
+             <dd><a href="javascript:;">商品物流管理</a></dd>
+             <dd><a href="javascript:;">商品售后管理</a></dd>
+             <dd><a href="javascript:;">商城模板管理</a></dd>
+            </dl>
+         </li>
+        <li class="layui-nav-item">
+        <a href="javascript:;">平台管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">微信公众号开放平台</a></dd>
+            <dd><a href="javascript:;">微博认证号开发平台</a></dd>
+            <dd><a href="javascript:;">腾讯QQ开放平台</a></dd>
+             <dd><a href="javascript:;">支付宝开放平台</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+        <a href="javascript:;">用户管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">系统用户管理</a></dd>
+            <dd><a href="javascript:;">第三方用户管理</a></dd>
+          </dl>
+        </li>
+         <li class="layui-nav-item">
+          <a href="javascript:;">系统配置</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">系统设置</a></dd>
+            <dd><a href="javascript:;">个人面板</a></dd>
+            
+          </dl>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+    
+    <!---layui-tab-card-->
+    <div class="layui-tab  layui-tab-brief "  lay-filter="demo"  lay-allowclose="true">
+<ul id="tabTitle" class="layui-tab-title" >
+<li class="layui-this" lay-id="1"> 
+<i class="layui-icon" style="font-size:20px; font-weight:bold; margin-right:10px;">&#xe68e;</i>系统首页</li>
+
+</ul>
+<div class="layui-tab-content">
+<div class="layui-tab-item layui-show">
+<div class="col-md-10">
+<table class="table table-bordered">
+						<tr>
+							<th>昵称</th>
+							<td>${token.nickname?default('未设置')}</td>
+						</tr>
+						<tr>
+							<th>Email/帐号</th>
+							<td>${token.email?default('未设置')}</td>
+						</tr>
+						<tr>
+							<th>创建时间</th>
+							<td>${token.createTime?string('yyyy-MM-dd HH:mm')}</td>
+						</tr>
+						<tr>
+							<th>最后登录时间</th>
+							<td>${token.lastLoginTime?string('yyyy-MM-dd HH:mm')}</td>
+						</tr>
+					</table>
+					</div>
+</div>
+
+
+</div>
+</div>
+    
+    
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © layui.com - 底部固定区域
+  </div>
+</div>
+<script src="${basePath}/common/layui/layui.js"></script>
+
+<script src="${basePath}/common/jquery1.8.3.min.js"></script>
+<script baseUrl="${basePath}" src="${basePath}/sys/js/user.login.js"></script>
+<script src="${basePath}/common/util.js"></script>
+<script src="${basePath}/sys/js/sys.index.js"></script>
+<script>
+/**layui.config({
+  base: 'sys/js/' //你存放新模块的目录，注意，不是layui的模块目录
+  ,version: false //一般用于更新模块缓存，默认不开启。设为true即让浏览器不缓存。也可以设为一个固定的值，如：201610
+}).use('index'); //加载入口
+**/
+</script>  
+
+</body>
+</html>

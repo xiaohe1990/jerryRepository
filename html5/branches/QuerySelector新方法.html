@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuerySelector</title>
+    <style type="text/css">
+        td{border-style: solid;border-width: 1px;font-size:200%;}
+        td:hover{background-color: green;font-size:200%;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>一个人生活</td>
+            <td>温岚</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>让我爱你</td>
+            <td>胡厦</td>
+        </tr>
+    </table>
+    <button type="button" id="findHover" autofocus>查看鼠标焦点目标位置</button>
+    <div id="hoverResult"></div>
+    <script type="text/javascript">
+        document.getElementById("findHover").onclick = function () {
+            var hovered = document.querySelector("td:hover");
+            alert(hovered);
+            if(hovered){
+                document.getElementById("hoverResult").innerHTML=hovered.innerHTML;
+            }
+        }
+    </script>
+</body>
+</html>

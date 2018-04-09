@@ -1,0 +1,7 @@
+package zb.com.services.impl;
+
+import zb.com.services.UserBasicServices;
+
+public class UserBasicServicesImpl implements UserBasicServices {
+
+}

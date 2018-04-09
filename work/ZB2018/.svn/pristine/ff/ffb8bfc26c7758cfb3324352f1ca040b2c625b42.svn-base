@@ -1,0 +1,81 @@
+package zb.com.entity;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+/**
+ * 
+* @ClassName: U_Service 
+* @Description: TODO(用户服务实体) 
+* @author XW 
+* @date 2018年4月7日 下午9:41:31 
+*
+ */
+@Entity
+public class U_Service {
+private Long id;
+private String service_name;//服务名称
+private String service_type;//服务类型
+private Date begin_time;//开始时间
+private Date end_time;//结束时间
+private Date create_time;//创建时间
+private Long uid;//所属用户ID
+private Date update_time;//修改时间
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+public Long getId() {
+	return id;
+}
+public void setId(Long id) {
+	this.id = id;
+}
+public String getService_name() {
+	return service_name;
+}
+public void setService_name(String service_name) {
+	this.service_name = service_name;
+}
+public String getService_type() {
+	return service_type;
+}
+public void setService_type(String service_type) {
+	this.service_type = service_type;
+}
+public Date getBegin_time() {
+	return begin_time;
+}
+public void setBegin_time(Date begin_time) {
+	this.begin_time = begin_time;
+}
+public Date getEnd_time() {
+	return end_time;
+}
+public void setEnd_time(Date end_time) {
+	this.end_time = end_time;
+}
+public Date getCreate_time() {
+	return create_time;
+}
+public void setCreate_time(Date create_time) {
+	this.create_time = create_time;
+}
+public Long getUid() {
+	return uid;
+}
+public void setUid(Long uid) {
+	this.uid = uid;
+}
+public Date getUpdate_time() {
+	return update_time;
+}
+public void setUpdate_time(Date update_time) {
+	this.update_time = update_time;
+}
+
+
+}

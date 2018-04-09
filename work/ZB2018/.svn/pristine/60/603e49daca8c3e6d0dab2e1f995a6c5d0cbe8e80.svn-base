@@ -1,0 +1,112 @@
+package zb.com.controls;
+
+import java.io.InputStream;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+
+
+import zb.com.entity.U_Basic;
+import zb.com.util.ConstantUtil;
+
+@Controller
+public abstract class BaseControl {
+
+	public U_Basic getSys_User(HttpServletRequest request) {
+		U_Basic cur = (U_Basic) request.getSession().getAttribute(
+				ConstantUtil.SYSUSERINFO);
+		return cur;
+	}
+
+	private boolean print(String result, HttpServletResponse response) {
+		PrintWriter pw = null;
+		try {
+			pw = response.getWriter();
+			pw.write(result);
+			pw.flush();
+		} catch (Exception e) {
+			return false;
+		} finally {
+			pw.close();
+		}
+		return true;
+	}
+
+	/**
+	 * ajax 输出
+	 * 
+	 * @param xml
+	 * @return
+	 */
+	public boolean printHTML(String xml, HttpServletResponse response) {
+		response.setContentType("text/html;charset=utf-8");
+		return print(xml, response);
+	}
+	public boolean printXML(String xml, HttpServletResponse response) {
+		response.setContentType("text/xml;charset=utf-8");
+		return print(xml, response);
+	}
+	
+
+	/**
+	 * 
+	 * 
+	 * ajax 输出
+	 * 
+	 * @param json
+	 * @return
+	 */
+	public boolean printJson(String json, HttpServletResponse response) {
+		response.setContentType("text/json;charset=utf-8");
+		return print(json, response);
+	}
+
+	/**
+	 * 图片 输出
+	 * 
+	 * @return
+	 */
+	public boolean printImge(byte[] byImge, String sErrImg,
+			HttpServletResponse response) {
+		response.setContentType("image/png");
+		try {
+			if (byImge == null) {// 无法正常获取图片时
+				response.sendRedirect("images/" + sErrImg);
+			} else {
+				ServletOutputStream imgOut = response.getOutputStream();
+				imgOut.write(byImge);
+				imgOut.flush();
+				imgOut.close();
+				imgOut = null;
+			}
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	public byte[] getParaStream(HttpServletRequest request) {
+		int iLeng = request.getContentLength();
+		int iOnce = 1;
+		int iTotal = 0;
+		InputStream in = null;
+
+		byte bContent[] = new byte[iLeng];
+
+		try {
+			in = request.getInputStream();
+			while (iOnce > 0) {
+				iOnce = in.read(bContent, iTotal, iLeng);
+				iTotal += iOnce;
+			}
+		} catch (Exception e) {
+			return null;
+		}
+		return bContent;
+	}
+
+}

@@ -1,0 +1,59 @@
+package com.mall.goods.model;
+
+import java.io.Serializable;
+
+/**
+ * 
+* @ClassName: CCommodity 
+* @Description: TODO(商品实体类) 
+* @author XW 
+* @date 2017年12月31日 下午11:26:51 
+*
+ */
+public class GGoods implements Serializable {
+	
+	/** 
+	* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+	*/ 
+	private static final long serialVersionUID = 1L;
+	private Long id;
+	private String name;//商品名称
+	private String goods_type;//商品类型 关联中间表
+	private String goods_img;//商品图片 JSON 或数组 格式
+	private String goods_tag;//商品标签 热卖,推荐 新品 等
+	
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getGoods_type() {
+		return goods_type;
+	}
+	public void setGoods_type(String goods_type) {
+		this.goods_type = goods_type;
+	}
+	public String getGoods_img() {
+		return goods_img;
+	}
+	public void setGoods_img(String goods_img) {
+		this.goods_img = goods_img;
+	}
+	public String getGoods_tag() {
+		return goods_tag;
+	}
+	public void setGoods_tag(String goods_tag) {
+		this.goods_tag = goods_tag;
+	}
+
+	
+	 
+}

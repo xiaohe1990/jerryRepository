@@ -7,9 +7,7 @@
 <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 <fullyQualifiedTypeName name="com.web.service.system.UUserService"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="org.apache.shiro.util.Factory"/>
 <fullyQualifiedTypeName name="org.apache.shiro.config.IniSecurityManagerFactory"/>
 <fullyQualifiedTypeName name="org.apache.shiro.mgt.SecurityManager"/>
@@ -30,4 +28,22 @@
 <fullyQualifiedTypeName name="com.web.common.utils.LoggerUtils"/>
 <fullyQualifiedTypeName name="com.mall.common.model.UUser"/>
 <fullyQualifiedTypeName name="com.mall.core.statics.Constant"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.mall.common.utils.JsonResult"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.JSON"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.mall.common.model.URole"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="com.mall.permission.service.PermissionService"/>
+<fullyQualifiedTypeName name="com.mall.common.utils.SpringContextUtil"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.mall.common.model.UPermission"/>
 </qualifiedTypeNameHistroy>

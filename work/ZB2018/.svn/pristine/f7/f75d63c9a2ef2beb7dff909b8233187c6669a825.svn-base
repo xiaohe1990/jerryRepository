@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/config/spring/springWebSockets.xmls=UTF-8
+encoding//src/zb/com/controls/MyWebSocketConfigs.java=UTF-8
+encoding//src/zb/com/controls/UserBasicControl.java=UTF-8
+encoding//src/zb/com/dao/BaseDao.java=GBK
+encoding//src/zb/com/dao/impl/BaseDaoImpl.java=GBK
+encoding/<project>=UTF-8

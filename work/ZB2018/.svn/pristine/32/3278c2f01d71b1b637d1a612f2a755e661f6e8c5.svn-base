@@ -1,0 +1,39 @@
+log4j.rootLogger =stdout,debug,INFO
+##debug,INFO, 
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{ABSOLUTE} %5p %c{1}:%L - %m%n
+
+#log4j.logger.org.apache.struts2 = OFF
+#log4j.logger.com.opensymphony.xwork2 = OFF
+#log4j.logger.ognl = OFF
+#log4j.logger.com.mchange.v2 = OFF
+#log4j.logger.freemarker = OFF
+
+### ?????? ###
+log4j.appender.console = org.apache.log4j.ConsoleAppender 
+log4j.appender.console.Target=System.out
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern= [ %p ] %c\: %m%n 
+
+### ??????????? ###
+log4j.appender.D = org.apache.log4j.RollingFileAppender
+log4j.appender.D.File = ${spring.root2s}WEB-INF/logs/log/log.txt
+log4j.appender.D.MaxFileSize=20MB
+#??????????? 
+log4j.appender.D.MaxBackupIndex=100
+log4j.appender.D.Append = true
+log4j.appender.D.Threshold = INFO 
+log4j.appender.D.layout = org.apache.log4j.PatternLayout
+log4j.appender.D.layout.ConversionPattern = [WeiXin]%-d{yyyy-MM-dd HH\:mm\:ss} - [ %p ] %c\: %m%n 
+
+### ??????????? ###
+log4j.appender.E = org.apache.log4j.RollingFileAppender
+log4j.appender.E.File = ${spring.root2s}WEB-INF/logs/error/error.txt
+log4j.appender.E.MaxFileSize=20MB
+log4j.appender.E.MaxBackupIndex=5
+log4j.appender.E.Append = true
+log4j.appender.E.Threshold = ERROR 
+log4j.appender.E.layout = org.apache.log4j.PatternLayout
+log4j.appender.E.layout.ConversionPattern =[WeiXin]%-d{yyyy-MM-dd HH\:mm\:ss} - [ %p ] %c\: %m%n 
